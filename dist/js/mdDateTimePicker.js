@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(['exports', 'moment', 'draggabilly'], factory);
+    define(['exports', 'moment'], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require('moment'), require('draggabilly'));
+    factory(exports, require('moment'));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.moment, global.draggabilly);
+    factory(mod.exports, global.moment);
     global.mdDateTimePicker = mod.exports;
   }
-})(this, function (exports, _moment, _draggabilly) {
+})(this, function (exports, _moment) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -18,8 +18,6 @@
   });
 
   var _moment2 = _interopRequireDefault(_moment);
-
-  var _draggabilly2 = _interopRequireDefault(_draggabilly);
 
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -1184,7 +1182,7 @@
             rotate = 'mddtp-picker__cell--rotate-',
             hOffset = circularHolder.getBoundingClientRect(),
             divides = void 0,
-            fakeNeedleDraggabilly = new _draggabilly2.default(fakeNeedle, {
+            fakeNeedleDraggabilly = new Draggabilly(fakeNeedle, {
           containment: !0
         });
 
